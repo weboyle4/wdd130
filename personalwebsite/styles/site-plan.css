@@ -1,13 +1,14 @@
 /* BILLY BOYLE CSS - UPDATED */
-@import url('https://fonts.googleapis.com/css?family=IM+Fell+French+Canon+SC|Lato');
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+French+Canon+SC&family=Lato:ital,wght@0,400;0,700;1,400&display=swap');
 
 :root {
   --primary-color: #2C3E50;
   --secondary-color: #18BC9C;
   --accent1-color: #E74C3C;
   --accent2-color: #ECF0F1;
+  /* Corrected font names for Google Fonts compatibility */
   --heading-font: "IM Fell French Canon SC", serif;
-  --paragraph-font: Lato, Helvetica, sans-serif;
+  --paragraph-font: "Lato", Helvetica, sans-serif;
   --headline-color-on-white: #2C3E50;  
   --headline-color-on-color: #ECF0F1; 
   --paragraph-color-on-white: #2C3E50; 
