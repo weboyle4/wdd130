@@ -6,7 +6,6 @@
   --secondary-color: #18BC9C;
   --accent1-color: #E74C3C;
   --accent2-color: #ECF0F1;
-  /* Corrected font names for Google Fonts compatibility */
   --heading-font: "IM Fell French Canon SC", serif;
   --paragraph-font: "Lato", Helvetica, sans-serif;
   --headline-color-on-white: #2C3E50;  
@@ -23,7 +22,7 @@
 body {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 2em;
+  padding: 0; /* Changed from 2em to 0 to allow header/footer to span full width */
   font-size: 18px;
   text-align: center;
   font-family: var(--paragraph-font);
@@ -32,7 +31,7 @@ body {
 img {
   display: block;
   margin: 20px auto;
-  max-width: 400px; /* Limits size of wireframes/logos */
+  max-width: 400px;
   height: auto;
 }
 
@@ -57,7 +56,6 @@ hr {
   border: none;
 }
 
-/* --- Centered Navigation --- */
 nav {
   background-color: var(--nav-background-color);
   display: flex;
@@ -80,10 +78,38 @@ nav a:hover {
   background-color: var(--nav-hover-background-color);
 }
 
-/* --- Table & Paragraph Styling --- */
 p { padding: 1em; line-height: 1.6; text-align: left; max-width: 800px; margin: 0 auto; }
 p.colored { background-color: var(--paragraph-background-color); color: var(--paragraph-color-on-color); }
 
+/* --- Footer Styling --- */
+footer {
+  background-color: var(--primary-color);
+  color: var(--headline-color-on-color);
+  padding: 25px;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+footer a {
+  color: var(--nav-link-color);
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+  color: var(--secondary-color);
+}
+
+footer .social img {
+  width: 30px;
+  height: auto;
+  margin: 10px;
+  display: inline-block; /* This overrides the general 'img' block display */
+}
+
+/* --- Site Plan Grid Code (Kept for your reference) --- */
 .colors { width: 100%; margin: 30px auto; border-collapse: collapse; }
 .colors th { background-color: #999; color: white; padding: 10px; }
 .colors td { height: 3em; }
@@ -92,7 +118,6 @@ p.colored { background-color: var(--paragraph-background-color); color: var(--pa
 .accent1 { background-color: var(--accent1-color); }
 .accent2 { background-color: var(--accent2-color); }
 
-/* --- Site Map Grid --- */
 .sitemap {
   display: grid;
   justify-content: center;
@@ -105,7 +130,6 @@ p.colored { background-color: var(--paragraph-background-color); color: var(--pa
     "page2 page2 . . page3 page3";
   margin: 40px auto;
 }
-
 .sitemap > div { text-align: center; border: 1px solid #ccc; background-color: #eee; line-height: 3em; }
 .sm-home { grid-area: home; }
 .sm-page2 { grid-area: page2; }
