@@ -1,4 +1,4 @@
-/* BILLY BOYLE CSS - UPDATED */
+/* BILLY BOYLE CSS - CENTERED & GRID READY */
 @import url('https://fonts.googleapis.com/css2?family=IM+Fell+French+Canon+SC&family=Lato:ital,wght@0,400;0,700;1,400&display=swap');
 
 :root {
@@ -22,24 +22,14 @@
 body {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0; /* Changed from 2em to 0 to allow header/footer to span full width */
+  padding: 0;
   font-size: 18px;
-  text-align: center;
   font-family: var(--paragraph-font);
+  background-color: #ffffff;
+  text-align: center; /* Initial center for the whole page */
 }
 
-img {
-  display: block;
-  margin: 20px auto;
-  max-width: 400px;
-  height: auto;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--heading-font);
-  color: var(--headline-color-on-white);
-}
-
+/* --- Navigation & Header --- */
 header {
   padding: 1.5em;
   text-align: center;
@@ -47,21 +37,17 @@ header {
   background-color: var(--paragraph-background-color);
 }
 
-header h1, header h2 { color: var(--headline-color-on-color); }
-
-hr {
-  height: 3px;
-  margin: 35px 0;
-  background: var(--accent1-color);
-  border: none;
+header h1 { 
+    margin: 0;
+    font-family: var(--heading-font);
+    color: var(--headline-color-on-color); 
 }
 
 nav {
   background-color: var(--nav-background-color);
   display: flex;
   justify-content: center;
-  list-style-type: none;
-  margin: 20px 0;
+  margin: 0;
   padding: 0;
 }
 
@@ -78,18 +64,105 @@ nav a:hover {
   background-color: var(--nav-hover-background-color);
 }
 
-p { padding: 1em; line-height: 1.6; text-align: left; max-width: 800px; margin: 0 auto; }
-p.colored { background-color: var(--paragraph-background-color); color: var(--paragraph-color-on-color); }
+/* --- HOME PAGE GRID LAYOUT --- */
+.home-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+    justify-items: center; /* Centers the actual grid items horizontally */
+    align-items: start;
+}
 
-/* --- Footer Styling --- */
+.hero {
+    grid-column: 1 / span 2;
+    text-align: center;
+    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: 30px;
+    width: 100%;
+}
+
+.content-block {
+    grid-column: 1 / span 2; /* Centering this block specifically for a cleaner look */
+    text-align: center;
+    max-width: 800px;
+}
+
+/* --- Contact Box Styling --- */
+.contact-box {
+    grid-column: 1 / span 2;
+    background-color: var(--accent2-color);
+    padding: 30px;
+    border-radius: 8px;
+    border: 2px solid var(--secondary-color);
+    margin-top: 20px;
+    width: 90%; /* Ensures it fills most of the grid width */
+}
+
+.contact-box h3 { 
+    margin-top: 0; 
+    text-align: center;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column; /* Stacked and centered */
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-box p { 
+    padding: 10px; 
+    margin: 0;
+    text-align: center;
+}
+
+.contact-box a { 
+    color: var(--primary-color); 
+    font-weight: bold; 
+}
+
+/* --- General Typography --- */
+h1, h2, h3 {
+  font-family: var(--heading-font);
+  color: var(--headline-color-on-white);
+  text-align: center;
+}
+
+p { 
+    line-height: 1.6; 
+    color: var(--paragraph-color-on-white);
+    text-align: center; /* Added to keep paragraph text centered */
+    margin: 10px auto;
+}
+
+/* --- Images --- */
+.profile-img {
+    width: 200px;
+    height: auto;
+    border-radius: 50%;
+    border: 5px solid var(--secondary-color);
+    display: block;
+    margin: 20px auto;
+}
+
+.content-img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+}
+
+/* --- Footer --- */
 footer {
   background-color: var(--primary-color);
   color: var(--headline-color-on-color);
-  padding: 25px;
-  margin-top: 50px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  padding: 40px 20px;
+  margin-top: 60px;
+  text-align: center;
 }
 
 footer a {
@@ -97,19 +170,19 @@ footer a {
   text-decoration: none;
 }
 
-footer a:hover {
-  text-decoration: underline;
-  color: var(--secondary-color);
+footer .social {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
 }
 
 footer .social img {
   width: 30px;
   height: auto;
-  margin: 10px;
-  display: inline-block; /* This overrides the general 'img' block display */
+  margin: 0 10px;
 }
 
-/* --- Site Plan Grid Code (Kept for your reference) --- */
+/* Helper for Site Plan tables */
 .colors { width: 100%; margin: 30px auto; border-collapse: collapse; }
 .colors th { background-color: #999; color: white; padding: 10px; }
 .colors td { height: 3em; }
@@ -117,23 +190,3 @@ footer .social img {
 .secondary { background-color: var(--secondary-color); }
 .accent1 { background-color: var(--accent1-color); }
 .accent2 { background-color: var(--accent2-color); }
-
-.sitemap {
-  display: grid;
-  justify-content: center;
-  grid-template-columns: repeat(6, 15%);
-  grid-template-rows: 3em 1.5em 1.5em 3em;
-  grid-template-areas: 
-    ". . home home . ."
-    ". . . top . ."
-    ". left left right right ."
-    "page2 page2 . . page3 page3";
-  margin: 40px auto;
-}
-.sitemap > div { text-align: center; border: 1px solid #ccc; background-color: #eee; line-height: 3em; }
-.sm-home { grid-area: home; }
-.sm-page2 { grid-area: page2; }
-.sm-page3 { grid-area: page3; }
-.top { grid-area: top; border-left: 2px solid #333; background: none; border-right: none; border-bottom: none; border-top: none; }
-.left { grid-area: left; border-top: 2px solid #333; border-left: 2px solid #333; background: none; border-right: none; border-bottom: none; }
-.right { grid-area: right; border-top: 2px solid #333; border-right: 2px solid #333; background: none; border-left: none; border-bottom: none; }

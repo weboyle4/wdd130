@@ -5,19 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home | Billy Boyle Cybersecurity</title>
     <link type="text/css" rel="stylesheet" href="styles/site-plan.css">
-    <style>
-        .contact-box {
-            background-color: var(--accent2-color);
-            padding: 20px;
-            border-radius: 8px;
-            border: 2px solid var(--secondary-color);
-            margin: 40px auto;
-            max-width: 600px;
-        }
-        .contact-box h3 { margin-top: 0; }
-        .contact-box p { text-align: center; padding: 5px; }
-        .contact-box a { color: var(--primary-color); font-weight: bold; }
-    </style>
 </head>
 <body>
     <header>
@@ -29,24 +16,26 @@
         </nav>
     </header>
 
-    <main>
-        <section>
+    <main class="home-grid">
+        <section class="hero">
             <h2>The Mission: Securing the Digital Frontier</h2>
-            <img src="images/headshot.jpg" alt="Billy Boyle Headshot" style="width:250px; border-radius: 50%;">
+            <img src="images/headshot.jpg" alt="Billy Boyle Headshot" class="profile-img">
             <p>Welcome to my professional cybersecurity portfolio. My name is Billy Boyle, and I am a dedicated Cybersecurity student at BYU-Idaho. Ever since I was a kid, my parents tried to stop me from using the internet, and I always found a way around it. As I grew older, I realized I could get paid to do this.</p>
         </section>
 
-        <section>
+        <section class="content-block">
             <h3>Technical Passion</h3>
             <p>I am currently deep-diving into the world of offensive and defensive security. I am actively preparing for the CompTIA Security+ certification to complement my existing A+ and Network+ credentials. I believe hands-on experience is the best teacher.</p>
-            <img src="images/Shaurya.png" alt="Logo" style="width:500px;">
+            <img src="images/Shaurya.png" alt="Cybersecurity Logo" class="content-img">
         </section>
 
         <section class="contact-box">
             <h3>Contact Me</h3>
-            <p><strong>Email:</strong> <a href="mailto:weboyleiv@gmail.com">weboyleiv@gmail.com</a></p>
-            <p><strong>Phone:</strong> (702) 569-8177</p>
-            <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/boyle-billy/" target="_blank">linkedin.com/in/boyle-billy/</a></p>
+            <div class="contact-info">
+                <p><strong>Email:</strong> <a href="mailto:weboyleiv@gmail.com">weboyleiv@gmail.com</a></p>
+                <p><strong>Phone:</strong> (702) 569-8177</p>
+                <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/boyle-billy/" target="_blank">linkedin.com/in/boyle-billy/</a></p>
+            </div>
         </section>
     </main>
 
