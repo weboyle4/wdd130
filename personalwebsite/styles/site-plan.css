@@ -26,7 +26,7 @@ body {
   font-size: 18px;
   font-family: var(--paragraph-font);
   background-color: #ffffff;
-  text-align: center; /* Initial center for the whole page */
+  text-align: center;
 }
 
 /* --- Navigation & Header --- */
@@ -72,7 +72,7 @@ nav a:hover {
     max-width: 1000px;
     margin: 40px auto;
     padding: 0 20px;
-    justify-items: center; /* Centers the actual grid items horizontally */
+    justify-items: center; 
     align-items: start;
 }
 
@@ -85,7 +85,7 @@ nav a:hover {
 }
 
 .content-block {
-    grid-column: 1 / span 2; /* Centering this block specifically for a cleaner look */
+    grid-column: 1 / span 2; 
     text-align: center;
     max-width: 800px;
 }
@@ -98,7 +98,7 @@ nav a:hover {
     border-radius: 8px;
     border: 2px solid var(--secondary-color);
     margin-top: 20px;
-    width: 90%; /* Ensures it fills most of the grid width */
+    width: 90%;
 }
 
 .contact-box h3 { 
@@ -108,7 +108,7 @@ nav a:hover {
 
 .contact-info {
     display: flex;
-    flex-direction: column; /* Stacked and centered */
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
@@ -134,7 +134,7 @@ h1, h2, h3 {
 p { 
     line-height: 1.6; 
     color: var(--paragraph-color-on-white);
-    text-align: center; /* Added to keep paragraph text centered */
+    text-align: center;
     margin: 10px auto;
 }
 
@@ -182,11 +182,40 @@ footer .social img {
   margin: 0 10px;
 }
 
-/* Helper for Site Plan tables */
-.colors { width: 100%; margin: 30px auto; border-collapse: collapse; }
-.colors th { background-color: #999; color: white; padding: 10px; }
-.colors td { height: 3em; }
-.primary { background-color: var(--primary-color); }
-.secondary { background-color: var(--secondary-color); }
-.accent1 { background-color: var(--accent1-color); }
-.accent2 { background-color: var(--accent2-color); }
+/* --- NEW WEB COMPONENT STYLES (W12) --- */
+
+.image-container {
+    position: relative;
+    max-width: 400px;
+    margin: 20px auto;
+}
+
+/* Ensure the image inside the container behaves correctly */
+.image-container .content-img {
+    margin: 0; 
+    width: 100%;
+}
+
+.btn-on-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--secondary-color);
+    color: white;
+    font-family: var(--heading-font);
+    font-size: 18px;
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: 0.3s;
+    white-space: nowrap;
+}
+
+.btn-on-image:hover {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+}
