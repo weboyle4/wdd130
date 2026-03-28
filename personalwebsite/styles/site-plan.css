@@ -1,4 +1,4 @@
-/* BILLY BOYLE CSS - CENTERED & GRID READY */
+/* BILLY BOYLE CSS - COMPLETE & INTEGRATED */
 @import url('https://fonts.googleapis.com/css2?family=IM+Fell+French+Canon+SC&family=Lato:ital,wght@0,400;0,700;1,400&display=swap');
 
 :root {
@@ -19,6 +19,7 @@
   --nav-hover-background-color: #18BC9C;
 }
 
+/* --- Base Body Styles --- */
 body {
   max-width: 1200px;
   margin: 0 auto;
@@ -64,7 +65,7 @@ nav a:hover {
   background-color: var(--nav-hover-background-color);
 }
 
-/* --- HOME PAGE GRID LAYOUT --- */
+/* --- HOME PAGE GRID (From your original) --- */
 .home-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -90,7 +91,37 @@ nav a:hover {
     max-width: 800px;
 }
 
-/* --- Contact Box Styling --- */
+/* --- RESUME PAGE GRID (The new layout for W12) --- */
+.resume-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.resume-title {
+    grid-column: 1 / span 2;
+    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: 10px;
+}
+
+.competencies {
+    grid-column: 1 / span 2;
+    background-color: var(--accent2-color);
+    padding: 25px;
+    border-radius: 10px;
+    border-left: 5px solid var(--secondary-color);
+}
+
+.education-box, .experience-box {
+    grid-column: span 1;
+    text-align: left;
+    padding: 15px;
+}
+
+/* --- Contact Box (From your original) --- */
 .contact-box {
     grid-column: 1 / span 2;
     background-color: var(--accent2-color);
@@ -101,30 +132,13 @@ nav a:hover {
     width: 90%;
 }
 
-.contact-box h3 { 
-    margin-top: 0; 
-    text-align: center;
-}
-
 .contact-info {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
 }
 
-.contact-box p { 
-    padding: 10px; 
-    margin: 0;
-    text-align: center;
-}
-
-.contact-box a { 
-    color: var(--primary-color); 
-    font-weight: bold; 
-}
-
-/* --- General Typography --- */
+/* --- Typography & Elements (From your original) --- */
 h1, h2, h3 {
   font-family: var(--heading-font);
   color: var(--headline-color-on-white);
@@ -134,11 +148,9 @@ h1, h2, h3 {
 p { 
     line-height: 1.6; 
     color: var(--paragraph-color-on-white);
-    text-align: center;
     margin: 10px auto;
 }
 
-/* --- Images --- */
 .profile-img {
     width: 200px;
     height: auto;
@@ -148,52 +160,23 @@ p {
     margin: 20px auto;
 }
 
-.content-img {
-    width: 100%;
-    max-width: 400px;
+.res-img {
+    width: 130px;
     height: auto;
-    display: block;
-    margin: 20px auto;
+    margin: 10px;
 }
 
-/* --- Footer --- */
-footer {
-  background-color: var(--primary-color);
-  color: var(--headline-color-on-color);
-  padding: 40px 20px;
-  margin-top: 60px;
-  text-align: center;
-}
-
-footer a {
-  color: var(--nav-link-color);
-  text-decoration: none;
-}
-
-footer .social {
-    margin-top: 15px;
+.resume-images {
     display: flex;
     justify-content: center;
+    gap: 20px;
 }
 
-footer .social img {
-  width: 30px;
-  height: auto;
-  margin: 0 10px;
-}
-
-/* --- NEW WEB COMPONENT STYLES (W12) --- */
-
+/* --- W12 Button Styles (From your original) --- */
 .image-container {
     position: relative;
     max-width: 400px;
     margin: 20px auto;
-}
-
-/* Ensure the image inside the container behaves correctly */
-.image-container .content-img {
-    margin: 0; 
-    width: 100%;
 }
 
 .btn-on-image {
@@ -206,16 +189,33 @@ footer .social img {
     font-family: var(--heading-font);
     font-size: 18px;
     padding: 12px 24px;
-    border: none;
-    cursor: pointer;
     border-radius: 5px;
     text-decoration: none;
     transition: 0.3s;
-    white-space: nowrap;
 }
 
 .btn-on-image:hover {
     background-color: var(--primary-color);
     color: var(--secondary-color);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+}
+
+/* --- Footer --- */
+footer {
+  background-color: var(--primary-color);
+  color: var(--headline-color-on-color);
+  padding: 40px 20px;
+  margin-top: 60px;
+}
+
+footer a { color: var(--nav-link-color); text-decoration: none; }
+
+footer .social {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+footer .social img {
+  width: 30px;
+  margin: 0 10px;
 }
