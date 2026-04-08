@@ -65,8 +65,8 @@ nav a:hover {
   background-color: var(--nav-hover-background-color);
 }
 
-/* --- HOME PAGE GRID (From your original) --- */
-.home-grid {
+/* --- GRID LAYOUTS --- */
+.home-grid, .resume-grid, .projects-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 30px;
@@ -77,7 +77,7 @@ nav a:hover {
     align-items: start;
 }
 
-.hero {
+.hero, .resume-title, .projects-container h2 {
     grid-column: 1 / span 2;
     text-align: center;
     border-bottom: 2px solid var(--secondary-color);
@@ -85,34 +85,10 @@ nav a:hover {
     width: 100%;
 }
 
-.content-block {
+.content-block, .project-card, .competencies {
     grid-column: 1 / span 2; 
     text-align: center;
     max-width: 800px;
-}
-
-/* --- RESUME PAGE GRID (The new layout for W12) --- */
-.resume-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-    max-width: 1000px;
-    margin: 40px auto;
-    padding: 0 20px;
-}
-
-.resume-title {
-    grid-column: 1 / span 2;
-    border-bottom: 2px solid var(--secondary-color);
-    padding-bottom: 10px;
-}
-
-.competencies {
-    grid-column: 1 / span 2;
-    background-color: var(--accent2-color);
-    padding: 25px;
-    border-radius: 10px;
-    border-left: 5px solid var(--secondary-color);
 }
 
 .education-box, .experience-box {
@@ -121,34 +97,14 @@ nav a:hover {
     padding: 15px;
 }
 
-/* --- Contact Box (From your original) --- */
-.contact-box {
-    grid-column: 1 / span 2;
-    background-color: var(--accent2-color);
-    padding: 30px;
+/* --- Elements --- */
+.project-img {
+    max-width: 100%;
+    width: 500px; /* Controlled here instead of HTML */
+    height: auto;
     border-radius: 8px;
-    border: 2px solid var(--secondary-color);
-    margin-top: 20px;
-    width: 90%;
-}
-
-.contact-info {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-/* --- Typography & Elements (From your original) --- */
-h1, h2, h3 {
-  font-family: var(--heading-font);
-  color: var(--headline-color-on-white);
-  text-align: center;
-}
-
-p { 
-    line-height: 1.6; 
-    color: var(--paragraph-color-on-white);
-    margin: 10px auto;
+    margin: 20px auto;
+    display: block;
 }
 
 .profile-img {
@@ -172,7 +128,18 @@ p {
     gap: 20px;
 }
 
-/* --- W12 Button Styles (From your original) --- */
+/* --- Contact Box --- */
+.contact-box {
+    grid-column: 1 / span 2;
+    background-color: var(--accent2-color);
+    padding: 30px;
+    border-radius: 8px;
+    border: 2px solid var(--secondary-color);
+    margin-top: 20px;
+    width: 90%;
+}
+
+/* --- Image Overlay Button --- */
 .image-container {
     position: relative;
     max-width: 400px;
@@ -207,15 +174,17 @@ footer {
   margin-top: 60px;
 }
 
-footer a { color: var(--nav-link-color); text-decoration: none; }
-
-footer .social {
-    margin-top: 15px;
-    display: flex;
-    justify-content: center;
-}
-
 footer .social img {
   width: 30px;
   margin: 0 10px;
+}
+
+/* --- RESPONSIVE MOBILE VIEW --- */
+@media screen and (max-width: 700px) {
+    .home-grid, .resume-grid, .projects-container {
+        grid-template-columns: 1fr;
+    }
+    .education-box, .experience-box {
+        grid-column: 1 / span 1;
+    }
 }
